@@ -24,6 +24,7 @@
 		CF738BD11676AF23009AAB6F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF738BA91676AF23009AAB6F /* Foundation.framework */; };
 		CF738BD91676AF23009AAB6F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CF738BD71676AF23009AAB6F /* InfoPlist.strings */; };
 		CF738BDC1676AF23009AAB6F /* JWBlocksTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CF738BDB1676AF23009AAB6F /* JWBlocksTests.m */; };
+		CF738BEB1676AFAE009AAB6F /* JWBlockActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = CF738BEA1676AFAE009AAB6F /* JWBlockActionSheet.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,8 @@
 		CF738BD81676AF23009AAB6F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CF738BDA1676AF23009AAB6F /* JWBlocksTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JWBlocksTests.h; sourceTree = "<group>"; };
 		CF738BDB1676AF23009AAB6F /* JWBlocksTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JWBlocksTests.m; sourceTree = "<group>"; };
+		CF738BE91676AFAE009AAB6F /* JWBlockActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWBlockActionSheet.h; sourceTree = SOURCE_ROOT; };
+		CF738BEA1676AFAE009AAB6F /* JWBlockActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JWBlockActionSheet.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +122,7 @@
 		CF738BAD1676AF23009AAB6F /* JWBlocks */ = {
 			isa = PBXGroup;
 			children = (
+				CF738BE51676AF71009AAB6F /* New Group */,
 				CF738BB61676AF23009AAB6F /* AppDelegate.h */,
 				CF738BB71676AF23009AAB6F /* AppDelegate.m */,
 				CF738BBF1676AF23009AAB6F /* MainStoryboard_iPhone.storyboard */,
@@ -161,6 +165,15 @@
 				CF738BD71676AF23009AAB6F /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CF738BE51676AF71009AAB6F /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				CF738BE91676AFAE009AAB6F /* JWBlockActionSheet.h */,
+				CF738BEA1676AFAE009AAB6F /* JWBlockActionSheet.m */,
+			);
+			name = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,6 +290,7 @@
 				CF738BB41676AF23009AAB6F /* main.m in Sources */,
 				CF738BB81676AF23009AAB6F /* AppDelegate.m in Sources */,
 				CF738BC71676AF23009AAB6F /* ViewController.m in Sources */,
+				CF738BEB1676AFAE009AAB6F /* JWBlockActionSheet.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

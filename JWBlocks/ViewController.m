@@ -8,6 +8,8 @@
 
 #import "ViewController.h"
 
+#import "JWBlockActionSheet.h"
+
 @interface ViewController ()
 
 @end
@@ -26,4 +28,12 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)onActionSheet:(id)sender {
+	JWBlockActionSheet* action = [[JWBlockActionSheet alloc] initWithTitle:@"title" block:^(NSInteger index) {
+		NSLog(@"%d", index);
+	} cancelButtonTitle:@
+								  "cancel"destructiveButtonTitle:@"des" otherButtonTitles:nil];
+	
+	[action showInView:self.view];
+}
 @end
