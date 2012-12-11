@@ -52,6 +52,8 @@ destructiveButtonTitle:(NSString *)destructiveButtonTitle
 	return self;
 }
 
+#pragma mark - UIActionSheetDelegate
+
 - (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex
 {
 	if (_notiBlock) {
@@ -59,4 +61,17 @@ destructiveButtonTitle:(NSString *)destructiveButtonTitle
 	}
 }
 
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+	if (_notiBlock) {
+		_notiBlock(buttonIndex);
+	}
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet willDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+	if (_notiBlock) {
+		_notiBlock(buttonIndex);
+	}
+}
 @end
