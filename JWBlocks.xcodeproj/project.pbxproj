@@ -25,6 +25,7 @@
 		CF738BD91676AF23009AAB6F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CF738BD71676AF23009AAB6F /* InfoPlist.strings */; };
 		CF738BDC1676AF23009AAB6F /* JWBlocksTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CF738BDB1676AF23009AAB6F /* JWBlocksTests.m */; };
 		CF738BEB1676AFAE009AAB6F /* JWBlockActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = CF738BEA1676AFAE009AAB6F /* JWBlockActionSheet.m */; };
+		CF738C09167726CF009AAB6F /* JWBlockAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF738C08167726CF009AAB6F /* JWBlockAlertView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,8 @@
 		CF738BDB1676AF23009AAB6F /* JWBlocksTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JWBlocksTests.m; sourceTree = "<group>"; };
 		CF738BE91676AFAE009AAB6F /* JWBlockActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWBlockActionSheet.h; sourceTree = SOURCE_ROOT; };
 		CF738BEA1676AFAE009AAB6F /* JWBlockActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JWBlockActionSheet.m; sourceTree = SOURCE_ROOT; };
+		CF738C07167726CF009AAB6F /* JWBlockAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWBlockAlertView.h; sourceTree = SOURCE_ROOT; };
+		CF738C08167726CF009AAB6F /* JWBlockAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JWBlockAlertView.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,7 +125,7 @@
 		CF738BAD1676AF23009AAB6F /* JWBlocks */ = {
 			isa = PBXGroup;
 			children = (
-				CF738BE51676AF71009AAB6F /* New Group */,
+				CF738BE51676AF71009AAB6F /* JWBlocks */,
 				CF738BB61676AF23009AAB6F /* AppDelegate.h */,
 				CF738BB71676AF23009AAB6F /* AppDelegate.m */,
 				CF738BBF1676AF23009AAB6F /* MainStoryboard_iPhone.storyboard */,
@@ -167,13 +170,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		CF738BE51676AF71009AAB6F /* New Group */ = {
+		CF738BE51676AF71009AAB6F /* JWBlocks */ = {
 			isa = PBXGroup;
 			children = (
 				CF738BE91676AFAE009AAB6F /* JWBlockActionSheet.h */,
 				CF738BEA1676AFAE009AAB6F /* JWBlockActionSheet.m */,
+				CF738C07167726CF009AAB6F /* JWBlockAlertView.h */,
+				CF738C08167726CF009AAB6F /* JWBlockAlertView.m */,
 			);
-			name = "New Group";
+			name = JWBlocks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -291,6 +296,7 @@
 				CF738BB81676AF23009AAB6F /* AppDelegate.m in Sources */,
 				CF738BC71676AF23009AAB6F /* ViewController.m in Sources */,
 				CF738BEB1676AFAE009AAB6F /* JWBlockActionSheet.m in Sources */,
+				CF738C09167726CF009AAB6F /* JWBlockAlertView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -475,6 +481,7 @@
 				CF738BE11676AF23009AAB6F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CF738BE21676AF23009AAB6F /* Build configuration list for PBXNativeTarget "JWBlocksTests" */ = {
 			isa = XCConfigurationList;
@@ -483,6 +490,7 @@
 				CF738BE41676AF23009AAB6F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

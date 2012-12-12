@@ -9,7 +9,7 @@
 #import "ViewController.h"
 
 #import "JWBlockActionSheet.h"
-
+#import "JWBlockAlertView.h"
 @interface ViewController ()
 
 @end
@@ -29,11 +29,23 @@
 }
 
 - (IBAction)onActionSheet:(id)sender {
-	JWBlockActionSheet* action = [[JWBlockActionSheet alloc] initWithTitle:@"title" block:^(NSInteger index) {
-		NSLog(@"%d", index);
-	} cancelButtonTitle:@
-								  "cancel"destructiveButtonTitle:@"des" otherButtonTitles:nil];
+
+	void (^block)(NSInteger, JWBlockActionSheet*)  = ^(NSInteger index, JWBlockActionSheet* blockActionSheet) {
+		NSLog(@"ButtonIndex %d %@", index, [blockActionSheet debugDescription]);
+	};
 	
-	[action showInView:self.view];
+	[JWBlockActionSheet showActionSheetWithTitle:@"title"
+										  inView:self.view
+								 completionBlock:block
+							   cancelButtonTitle:@"asdfas"
+						  destructiveButtonTitle:nil
+							   otherButtonTitles:nil];
+
+}
+
+- (IBAction)onAlertView:(id)sender {
+	JWBlockAlertView* alert =[[JWBlockAlertView alloc] initWithTitle:@"title" message:@"message" delegate:nil cancelButtonTitle:@"cancel" otherButtonTitles:@"others", nil];
+
+	[alert show];
 }
 @end

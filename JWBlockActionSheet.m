@@ -8,7 +8,7 @@
 
 #import "JWBlockActionSheet.h"
 
-typedef void (^NotiBlock)(NSInteger index);
+typedef void (^NotiBlock)(NSInteger index, JWBlockActionSheet* blockActionSheet);
 
 @implementation JWBlockActionSheet {
 	@private
@@ -33,8 +33,25 @@ typedef void (^NotiBlock)(NSInteger index);
 }
 */
 
++ (id)showActionSheetWithTitle:(NSString*)title
+						inView:(UIView*)view
+			   completionBlock:(void (^)(NSInteger index, JWBlockActionSheet* blockActionSheet)) block
+			 cancelButtonTitle:(NSString*)cancelButtonTitle
+		destructiveButtonTitle:(NSString*)destructiveButtonTitle
+			 otherButtonTitles:(NSString*)otherButtonTitles, ...
+{
+	JWBlockActionSheet *actionSheet = [[JWBlockActionSheet alloc] initWithTitle:title
+																completionBlock:block
+															  cancelButtonTitle:cancelButtonTitle
+														 destructiveButtonTitle:destructiveButtonTitle
+															  otherButtonTitles:otherButtonTitles, nil];
+	
+	[actionSheet showInView:view];
+	return actionSheet;
+}
+
 - (id)initWithTitle:(NSString *)title
-			  block:(void (^)(NSInteger index)) block
+	completionBlock:(void (^)(NSInteger index, JWBlockActionSheet*)) block
   cancelButtonTitle:(NSString *)cancelButtonTitle
 destructiveButtonTitle:(NSString *)destructiveButtonTitle
   otherButtonTitles:(NSString *)otherButtonTitles, ...
@@ -54,24 +71,10 @@ destructiveButtonTitle:(NSString *)destructiveButtonTitle
 
 #pragma mark - UIActionSheetDelegate
 
-- (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex
-{
-	if (_notiBlock) {
-		_notiBlock(buttonIndex);
-	}
-}
-
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
 	if (_notiBlock) {
-		_notiBlock(buttonIndex);
-	}
-}
-
-- (void)actionSheet:(UIActionSheet *)actionSheet willDismissWithButtonIndex:(NSInteger)buttonIndex
-{
-	if (_notiBlock) {
-		_notiBlock(buttonIndex);
+		_notiBlock(buttonIndex, self);
 	}
 }
 @end

@@ -8,15 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
-typedef void (^DismissBlock)(NSInteger);
-
 @interface JWBlockActionSheet : UIActionSheet <UIActionSheetDelegate>
 
-- (id)initWithTitle:(NSString *)title
-			  block:(void (^)(NSInteger index)) block
-  cancelButtonTitle:(NSString *)cancelButtonTitle
-destructiveButtonTitle:(NSString *)destructiveButtonTitle
-  otherButtonTitles:(NSString *)otherButtonTitles, ...;
++ (id)showActionSheetWithTitle:(NSString*)title
+						inView:(UIView *)view
+			   completionBlock:(void (^)(NSInteger index, JWBlockActionSheet* blockActionSheet)) block
+			 cancelButtonTitle:(NSString*)cancelButtonTitle
+		destructiveButtonTitle:(NSString*)destructiveButtonTitle
+			 otherButtonTitles:(NSString*)otherButtonTitles, ... NS_REQUIRES_NIL_TERMINATION;
+
+
+- (id)initWithTitle:(NSString *)title completionBlock:(void (^)(NSInteger index, JWBlockActionSheet* blockActionSheet)) block cancelButtonTitle:(NSString *)cancelButtonTitle destructiveButtonTitle:(NSString *)destructiveButtonTitle otherButtonTitles:(NSString *)otherButtonTitles, ... NS_REQUIRES_NIL_TERMINATION;
 
 
 
